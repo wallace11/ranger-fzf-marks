@@ -65,7 +65,7 @@ class dmark(Command):
             return
 
         # TODO: batch deletion
-        command = '< "{}" sort -f | fzf --height 62% \
+        command = '< "{}" sort -f | fzf \
             -m --ansi --bind=ctrl-o:accept,ctrl-t:toggle --query="{}"'.format(
             mark_file, query
         )
@@ -113,7 +113,7 @@ class fzm(Command):
             self.fm.notify("No fzf bookmark is created yet!", bad=True)
             return
 
-        command = '< "{}" sort -f | fzf --height 62% \
+        command = '< "{}" sort -f | fzf \
             +m --ansi --bind=ctrl-o:accept,ctrl-t:toggle --query="{}" --select-1'.format(
             mark_file, query
         )
